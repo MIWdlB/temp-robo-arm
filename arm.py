@@ -3,11 +3,17 @@ Robot arm class
 '''
 
 from joint import Joint
+from pincer import Pincer
 
 from typing import Optional, List, Union, Tuple
 
 class Arm():
-    def __init__(self, parts: Optional[List[Union[Joint, float]]] = []) -> None:
+    """
+    Arm class calling the Joint and Pincer classes
+
+    should I add a "Bone" class? Depends how we implement the animation I think
+    """
+    def __init__(self, parts: Optional[List[Union[Joint, float, Pincer]]] = []) -> None:
         self.parts = parts
 
     def add_joint(self, joint: Joint) -> None:
