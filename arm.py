@@ -6,7 +6,15 @@ from joint import Joint
 from bone import Bone
 from pincer import Pincer
 
+from enum import Enum
 from typing import Optional, List, Union, Tuple
+
+class Part(Enum):
+    "Define the parts that can be added"
+    JOINT = Joint
+    BONE = Bone
+    PINCER = Pincer
+
 
 class Arm():
     """
@@ -17,11 +25,8 @@ class Arm():
     def __init__(self, parts: Optional[List[Union[Joint, Bone, Pincer]]] = []) -> None:
         self.parts = parts
 
-    def add_joint(self, joint: Joint) -> None:
-        self.parts.append(joint)
-
-    def add_bone(self, bone: Bone) -> None:
-        self.parts.append(bone)
+    def add_part(self, part: Part) -> None:
+        self.parts.append(part)
 
     def show_parts(self):
         for index, part in enumerate(self.parts):
