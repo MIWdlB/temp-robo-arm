@@ -8,6 +8,7 @@ authors = ["temp"]
 python = "^3.8"
 typing = "^3.7.4"
 matplotlib = "^3.3.2"
+numpy = "^1.19.2"
 
 [tool.poetry.dev-dependencies]
 mypy = "^0.782"
